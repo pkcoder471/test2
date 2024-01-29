@@ -19,7 +19,10 @@ function Navbar() {
                                 <Link className="nav-link" to="/about">About</Link>
                             </li>
                         </ul>
-                        <button type="button" className="btn btn-primary">logout</button>
+                        {!localStorage.getItem('token')?<div className="d-flex">
+                        <Link type="button" className="btn btn-primary mx-2" to='/signIn'>SignIn</Link>
+                        <Link type="button" className="btn btn-primary" to='/signUp'>SignUp</Link>
+                        </div>:<button type="button" className="btn btn-primary">logout</button>}
                     </div>
                 </div>
             </nav>
